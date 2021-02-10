@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: ianhtest 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ianhtest
+  template:
+    metadata:
+      labels:
+        app: ianhtest 
+    spec:
+      containers:
+        - name: ianhtest 
+          image: registryianh2105.azurecr.io/ianhtest
+          ports:
+          - containerPort: 80
